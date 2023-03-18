@@ -1,0 +1,14 @@
+.body {
+  background-color: #000;
+  background-image: url('https://img.freepik.com/free-photo/coffee-beans-dark-background-top-view-coffee-concept_1220-6299.jpg?w=1380&t=st=1679171817~exp=1679172417~hmac=28e8aa7b46679b146333c6f505861c3d04e3cea39399a413a0cb6374985c0e88');
+  object-fit: cover;
+  background-repeat: no-repeat;
+  color: #f3e9d9;
+  height: 100vh;
+  padding-bottom: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 20vh;
+  font-size: 20px;
+}
