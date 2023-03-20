@@ -22,7 +22,7 @@ export class App extends Component {
     const { good, total } = this.state;
     let count = (good / total) * 100;
 
-    count = parseInt(count.toFixed());
+    count = +count.toFixed();
     if (!count) {
       return 0;
     } else {
