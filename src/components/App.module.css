@@ -1,10 +1,7 @@
 body {
   background-color: #000;
-
   color: #f3e9d9;
-  height: 100vh;
   width: 100vw;
-  font-size: 20px;
   text-align: center;
 }
 .body {
@@ -13,6 +10,7 @@ body {
   background-size: cover;
   width: 60vw;
   height: 60vh;
+  font-size: 20px;
   margin: 0px auto;
   padding-bottom: 50px;
   display: flex;
@@ -20,4 +18,15 @@ body {
   align-items: baseline;
   padding-left: 15%;
   padding-top: 10%;
+}
+
+@media screen and (max-width: 768px) {
+  .body {
+    padding-left: 5%;
+    width: 100vw;
+    height: 100vh;
+    border-radius: 0px;
+    font-size: 15px;
+    background-size: contain;
+  }
 }

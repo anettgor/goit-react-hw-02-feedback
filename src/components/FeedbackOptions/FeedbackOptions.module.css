@@ -8,6 +8,7 @@
   cursor: pointer;
   box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.3);
   transition: background-color 250ms ease-out;
+  text-transform: capitalize;
 }
 .btn:hover {
   background-color: rgb(204, 115, 46);

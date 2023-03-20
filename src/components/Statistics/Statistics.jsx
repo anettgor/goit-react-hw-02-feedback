@@ -20,7 +20,7 @@ export default class Statistics extends Component {
 
   render() {
     const { good, neutral, bad, total, positivePercentage } = this.props;
-
+    console.log(positivePercentage);
     return (
       <div className={css.stats}>
         <p>Good: {good} </p>
@@ -28,7 +28,7 @@ export default class Statistics extends Component {
         <p>Bad: {bad}</p>
         <p>Total: {total}</p>
         <p className={positivePercentage > 50 ? css.positive : css.negative}>
-          Positive feedback: {positivePercentage}%{' '}
+          Positive feedback: {positivePercentage}%
         </p>
       </div>
     );

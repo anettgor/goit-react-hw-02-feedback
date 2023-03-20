@@ -20,29 +20,22 @@ export class App extends Component {
 
   countPositiveFeedbackPercentage = () => {
     const { good, total } = this.state;
-    const count = (good / total) * 100;
+    let count = (good / total) * 100;
 
+    count = parseInt(count.toFixed());
     if (!count) {
-      return '-';
+      return 0;
     } else {
-      return count.toFixed();
+      return count;
     }
   };
 
   onFeedback = event => {
-    const { good, bad, neutral } = this.state;
-    if (event.target.textContent === 'Good') {
-      this.setState({ good: good + 1 });
-      this.countTotalFeedback();
-    } else if (event.target.textContent === 'Bad') {
-      this.setState({ bad: bad + 1 });
-      this.countTotalFeedback();
-    } else if (event.target.textContent === 'Neutral') {
-      this.setState({ neutral: neutral + 1 });
-      this.countTotalFeedback();
-    } else {
-      console.log('Error');
-    }
+    const data = event.target.dataset.opinion;
+    this.setState({
+      [data]: this.state[data] + 1,
+    });
+    this.countTotalFeedback();
   };
 
   render() {
@@ -52,9 +45,9 @@ export class App extends Component {
       <div className={css.body}>
         <Section title="Please leave feedback">
           <div>
-            <FeedbackOptions text="Good" onFeedback={this.onFeedback} />
-            <FeedbackOptions text="Neutral" onFeedback={this.onFeedback} />
-            <FeedbackOptions text="Bad" onFeedback={this.onFeedback} />
+            <FeedbackOptions text="good" onFeedback={this.onFeedback} />
+            <FeedbackOptions text="neutral" onFeedback={this.onFeedback} />
+            <FeedbackOptions text="bad" onFeedback={this.onFeedback} />
           </div>
         </Section>
         <Section title="Statistics">
